@@ -167,14 +167,14 @@ EOF
 
 if command -v yum >/dev/null 2>&1; then
   echo "Installing systemd services for RHEL/CentOS"
-  system_dir=/etc/systemd/system
-  echo "${vault_service}" | sudo tee ${system_dir}/vault.service
-  sudo chmod 0644 ${system_dir}/vault*
+  system_units=/etc/systemd/system
+  echo "${vault_service}" | sudo tee ${system_units}/vault.service
+  sudo chmod 0644 ${system_units}/vault*
 elif command -v apt >/dev/null 2>&1; then
   echo "Installing systemd services for Debian/Ubuntu"
-  system_dir=/etc/systemd/system
-  echo "${vault_service}" | sudo tee ${system_dir}/vault.service
-  sudo chmod 0644 ${system_dir}/vault*
+  system_units=/etc/systemd/system
+  echo "${vault_service}" | sudo tee ${system_units}/vault.service
+  sudo chmod 0644 ${system_units}/vault*
 else
   echo "Service not installed due to OS detection failure"
   exit 1

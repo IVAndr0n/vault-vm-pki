@@ -56,14 +56,14 @@ EOF
 
 if command -v yum >/dev/null 2>&1; then
   echo "Installing systemd services for RHEL/CentOS"
-  system_dir=/etc/systemd/system
-  echo "${vault_auto_unseal_service}" | sudo tee ${system_dir}/vault_auto_unseal.service
-  sudo chmod 0644 ${system_dir}/vault_auto_unseal*
+  system_units=/etc/systemd/system
+  echo "${vault_auto_unseal_service}" | sudo tee ${system_units}/vault_auto_unseal.service
+  sudo chmod 0644 ${system_units}/vault_auto_unseal*
 elif command -v apt >/dev/null 2>&1; then
   echo "Installing systemd services for Debian/Ubuntu"
-  system_dir=/lib/systemd/system
-  echo "${vault_auto_unseal_service}" | sudo tee ${system_dir}/vault_auto_unseal.service
-  sudo chmod 0644 ${system_dir}/vault_auto_unseal*
+  system_units=/etc/systemd/system
+  echo "${vault_auto_unseal_service}" | sudo tee ${system_units}/vault_auto_unseal.service
+  sudo chmod 0644 ${system_units}/vault_auto_unseal*
 else
   echo "Service not installed due to OS detection failure"
   exit 1
