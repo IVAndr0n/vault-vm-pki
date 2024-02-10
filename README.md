@@ -1,3 +1,11 @@
+---
+layout: post
+title: Create your own certificate authority (CA) using Vault on a virtual machine
+date: 2023-10-19
+categories:
+  - hashicorp
+---
+
 # Project: vault-vm-pki
 
 Create your own certificate authority (CA) using Vault.
