@@ -6,7 +6,7 @@ categories:
   - hashicorp
 ---
 
-# Project: vault-vm-pki
+<!-- # Project: vault-vm-pki -->
 
 Create your own certificate authority (CA) using Vault.
 In this project, the Vault server runs on a virtual machine.
